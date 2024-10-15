@@ -1,0 +1,33 @@
+
+nav {
+    background-color: #7368E7;
+    padding: 10px;
+  }
+
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+  nav button{
+    background-color: transparent;
+    border: 'none';
+    border-color: white;
+    display: 'flex';
+    align-items: center;
+  }
+  nav icon {
+
+ margin-right: 5px;
+ 
+  }
