@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 import '../styles/RegisterLogin.css';
 
@@ -22,7 +23,7 @@ function Login() {
     const user = existingUsers.find(user => user.email === email);
     
     if (user) {
-     
+    
       if (password === user.password) {
         alert('Login successful!');
         navigate('/search'); 
@@ -54,6 +55,7 @@ function Login() {
         />
         <button type="submit">Login</button>
       </form>
+      <Link  className="login_text" to="/register">Don't have an account <span className='span_login'>Register</span></Link>
     </div>
   );
 }

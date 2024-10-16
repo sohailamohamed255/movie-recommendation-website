@@ -31,8 +31,8 @@ function NavBar() {
         </button>
             </ul>
           <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <Link to="/search" style={{ textDecoration: 'none' }}> 
+            
+            <Link to="/register" style={{ textDecoration: 'none' }}> 
               <button 
                 className="btn" 
                 type="submit" 

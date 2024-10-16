@@ -69,6 +69,15 @@ button:active {
 .container-spacing {
   margin-bottom: 20px;
 }
+.login_text{
+  margin:50px;
+  color: black;
+  text-decoration: none;
+
+}
+.span_login{
+color:#5a57d1
+}
 
 
 

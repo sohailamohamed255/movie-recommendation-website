@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 import '../styles/RegisterLogin.css';
 
@@ -33,7 +34,7 @@ function Register({ onRegister }) {
     alert('Registration successful!');
     onRegister();
 
-    navigate('/search'); 
+    navigate('/login'); 
   };
 
   return (
@@ -64,6 +65,7 @@ function Register({ onRegister }) {
         />
         <button type="submit">Register</button>
       </form>
+      <Link className="login_text" to="/login">Already have an account <span className='span_login'>Login</span> </Link>
     </div>
     </div>
   );
