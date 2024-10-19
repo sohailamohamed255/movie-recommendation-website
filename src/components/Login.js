@@ -1,43 +1,38 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/RegisterLogin.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate(); 
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
 
-    
     if (!email || !password) {
-      alert('Please fill in both fields.');
+      setErrorMessage('Please fill in both fields.');
       return;
     }
 
-    
-    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-    const user = existingUsers.find(user => user.email === email);
-    
-    if (user) {
-    
-      if (password === user.password) {
-        alert('Login successful!');
-        navigate('/search'); 
-      } else {
-        alert('Invalid email or password.');
-      }
-    } else {
-      alert('Invalid email or password.');
+    try {
+      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      alert(response.data.message);
+      // Optionally store the token in local storage
+      localStorage.setItem('token', response.data.token);
+      navigate('/search'); // redirect after successful login
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
     }
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <form onSubmit={handleLogin}>
         <input
           type="email"
@@ -55,7 +50,7 @@ function Login() {
         />
         <button type="submit">Login</button>
       </form>
-      <Link  className="login_text" to="/register">Don't have an account <span className='span_login'>Register</span></Link>
+      <Link className="login_text" to="/register">Don't have an account? <span className='span_login'>Register</span></Link>
     </div>
   );
 }
