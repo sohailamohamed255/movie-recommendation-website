@@ -20,11 +20,13 @@ function Register({ onRegister }) {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { username, email, password });
+      console.log(username,email,password);
+      const response = await axios.post('http://localhost:5000/api/user/register', { name: username, email, password },  { headers: { 'Content-Type': 'application/json' } });
       alert(response.data.message);
       onRegister();
       navigate('/login'); 
     } catch (error) {
+      console.log(error);
       setErrorMessage(error.response.data.message);
     }
   };
