@@ -41,13 +41,13 @@ input[type="text"] {
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus {
-  border-color: #007bff;
+  border-color: #fd0404;
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
 button {
-  background-color: #7368E7;
+  background-color: #fd0404;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -59,11 +59,11 @@ button {
 }
 
 button:hover {
-  background-color: #5a57d1; 
+  background-color: #6d0000; 
 }
 
 button:active {
-  background-color: #4843b0; 
+  background-color: #fd0404; 
 }
 
 .container-spacing {
@@ -76,7 +76,7 @@ button:active {
 
 }
 .span_login{
-color:#5a57d1
+color:#fd0404
 }
 
 

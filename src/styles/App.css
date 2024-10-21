@@ -1,33 +1,52 @@
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px; /* Increased space between links */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
 
-nav {
-    background-color: #7368E7;
-    padding: 10px;
-  }
+/* Navbar links */
+nav a {
+  color: #ffffff; /* Default white color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+}
 
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
+/* Hover effect for navbar links */
+nav a:hover {
+  color: #f10909; /* Coral color on hover */
+  transform: scale(1.1); /* Slightly increase the size on hover */
+}
 
-  nav a {
-    color: white;
-    text-decoration: none;
-  }
+/* Specific hover effect for certain links */
+nav a[href="/login"]:hover,
+nav a[href="/register"]:hover,
+nav a[href="/"]:hover {
+  color: red; /* Only these links turn red */
+}
 
-  nav a:hover {
-    text-decoration: underline;
+/* Animation for the links (optional) */
+@keyframes textGrow {
+  0% {
+    transform: scale(1);
   }
-  nav button{
-    background-color: transparent;
-    border: 'none';
-    border-color: white;
-    display: 'flex';
-    align-items: center;
+  100% {
+    transform: scale(1.1);
   }
-  nav icon {
+}
 
- margin-right: 5px;
- 
-  }
+/* Optional: adding an underline animation */
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fd0404; /* Coral color underline */
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+

@@ -1,14 +1,66 @@
 .home {
-  background-color: #f4f4f4; 
+  display: flex; /* Use flexbox to position the sidebar and content */
   padding: 20px;
-  text-align: center;
+  background-color: #f4f4f4;
+  flex-direction: column; /* Align items in a column */
 }
 
-.home-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333; 
-  font-family: 'Arial', sans-serif;
+.filter-toggle {
+  background-color: #f10909; /* Background color for toggle button */
+  color: white; /* Text color for the button */
+  padding: 8px 12px; /* Adjusted padding for a better click area */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* Adjust position */
+  top: 10px; /* Position below the navbar */
+  left: 10px; /* Adjust left position as needed */
+  font-size: 16px; /* Increase font size for better readability */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  z-index: 1001; /* Ensure it is above the dropdown */
+}
+
+.filter-toggle:hover {
+  background-color: #c00707; /* Darker red on hover */
+}
+
+.filter-dropdown {
+  position: absolute; /* Position it below the filter button */
+  top: 60px; /* Adjust as necessary based on your layout */
+  left: 10px; /* Align it under the toggle button */
+  background: rgba(248, 7, 7, 0.9); /* Semi-transparent background */
+  padding: 20px; /* Padding around dropdown */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color for readability */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.filter-container {
+  margin-bottom: 20px; /* Spacing between filters */
+}
+
+.filter-label {
+  display: block; /* Make labels block elements */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
+  font-size: 1rem; /* Consistent font size */
+  color: #fff; /* Ensure labels are readable */
+}
+
+.filter-select,
+.filter-input {
+  width: 100%; /* Full width for inputs and selects */
+  padding: 10px; /* Padding for inputs */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for inputs */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for better visibility */
+  color: #333; /* Dark text for inputs */
+  font-size: 1rem; /* Consistent font size */
+}
+
+.filter-input {
+  margin-top: 5px; /* Space above input */
 }
 
 .movie-list {
@@ -21,7 +73,7 @@
 .movie-item {
   margin: 10px;
   text-align: center;
-  width: 150px;
+  width: 200px; /* Consistent width for movie items */
 }
 
 .movie-poster {
@@ -33,7 +85,3 @@
 .movie-poster:hover {
   transform: scale(1.05); 
 }
-
-
-
-
